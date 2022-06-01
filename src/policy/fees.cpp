@@ -905,7 +905,7 @@ CFeeRate CBlockPolicyEstimator::estimateSmartFee(int confTarget, FeeCalculation 
         }
     }
 
-    if (median < 0) return CFeeRate(0); // error condition
+    if (median < 0) return CFeeRate(0.0000001); // return min fees
 
     return CFeeRate(llround(median));
 }
